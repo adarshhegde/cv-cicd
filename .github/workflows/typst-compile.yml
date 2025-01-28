@@ -1,4 +1,4 @@
-name: Compile and Push Output
+name: Typst Compile and Push Output
 
 # Trigger the workflow on push events to the main branch
 on:
@@ -8,11 +8,7 @@ on:
 
 jobs:
   build-and-push:
-    runs-on: self-hosted  # Ensure this matches your runner labels if you have multiple
-
-    # Optionally, set environment variables for the entire job
-    env:
-      PATH: /usr/local/bin:${{ env.PATH }}
+    runs-on: self-hosted  # Ensure this matches your self-hosted runner labels
 
     steps:
       # 1. Checkout the repository
@@ -29,7 +25,7 @@ jobs:
           which typst || echo "Typst not found in PATH"
           typst --version || echo "Typst version check failed"
 
-      # 3. (Optional) Add /usr/local/bin to PATH if not already present
+      # 3. Add /usr/local/bin to PATH if not already present
       - name: Ensure /usr/local/bin is in PATH
         run: echo "/usr/local/bin" >> $GITHUB_PATH
 
@@ -39,9 +35,9 @@ jobs:
           which typst
           typst --version
 
-      # 5. Make compile.sh executable
+      # 5. Make compile.sh executable (if not already executable)
       - name: Make compile.sh executable
-        run: chmod +x compile.sh
+        run: chmod +x ./compile.sh
 
       # 6. Set up Git user for committing
       - name: Configure Git
