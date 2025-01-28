@@ -49,22 +49,14 @@ jobs:
       - name: Run compile.sh
         run: ./compile.sh
 
-      # 8. Add changes from the output folder
-      - name: Add Output Folder Changes
-        run: git add output
-        # Replace 'output' with your actual output folder name if different
+      - name: Add Changes
+        run: git add -f output
 
-      # 9. Commit changes if there are any
       - name: Commit Changes
-        id: commit
         run: |
-          git diff --quiet || git commit -m "Update output folder [skip ci]"
-        # The [skip ci] tag prevents the commit from triggering another workflow run
+          git commit -m "Update output files [skip ci]" || echo "No changes to commit."
 
-      # 10. Push changes back to the repository
       - name: Push Changes
-        if: steps.commit.outputs.commit != ''
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+        run: git push origin main || echo "No changes to push."
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
