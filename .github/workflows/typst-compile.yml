@@ -15,8 +15,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          # Ensures the full history is fetched for pushing
-          fetch-depth: 0
+          fetch-depth: 0  # Ensures the full history is fetched for pushing
 
       # 2. Debug: Print PATH and Typst Version
       - name: Debug Environment
@@ -29,7 +28,7 @@ jobs:
       - name: Ensure /usr/local/bin is in PATH
         run: echo "/usr/local/bin" >> $GITHUB_PATH
 
-      # 4. Verify Typst is now accessible
+      # 4. Verify Typst Accessibility
       - name: Verify Typst Accessibility
         run: |
           which typst
@@ -49,13 +48,16 @@ jobs:
       - name: Run compile.sh
         run: ./compile.sh
 
+      # 8. Add Changes to Git
       - name: Add Changes
         run: git add -f output
 
+      # 9. Commit Changes
       - name: Commit Changes
         run: |
           git commit -m "Update output files [skip ci]" || echo "No changes to commit."
 
+      # 10. Push Changes to Repository
       - name: Push Changes
         run: git push origin main || echo "No changes to push."
         env:
