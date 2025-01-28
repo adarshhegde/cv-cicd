@@ -1,5 +1,6 @@
 name: Compile and Push Output
 
+# Trigger the workflow on push events to the main branch
 on:
   push:
     branches:
@@ -7,30 +8,64 @@ on:
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted  # Ensure this matches your runner labels if you have multiple
+
+    # Optionally, set environment variables for the entire job
+    env:
+      PATH: /usr/local/bin:${{ env.PATH }}
 
     steps:
+      # 1. Checkout the repository
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
+          # Ensures the full history is fetched for pushing
           fetch-depth: 0
 
+      # 2. Debug: Print PATH and Typst Version
+      - name: Debug Environment
+        run: |
+          echo "Current PATH: $PATH"
+          which typst || echo "Typst not found in PATH"
+          typst --version || echo "Typst version check failed"
+
+      # 3. (Optional) Add /usr/local/bin to PATH if not already present
+      - name: Ensure /usr/local/bin is in PATH
+        run: echo "/usr/local/bin" >> $GITHUB_PATH
+
+      # 4. Verify Typst is now accessible
+      - name: Verify Typst Accessibility
+        run: |
+          which typst
+          typst --version
+
+      # 5. Make compile.sh executable
+      - name: Make compile.sh executable
+        run: chmod +x compile.sh
+
+      # 6. Set up Git user for committing
       - name: Configure Git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+      # 7. Run the compile script
       - name: Run compile.sh
         run: ./compile.sh
 
+      # 8. Add changes from the output folder
       - name: Add Output Folder Changes
         run: git add output
+        # Replace 'output' with your actual output folder name if different
 
+      # 9. Commit changes if there are any
       - name: Commit Changes
         id: commit
         run: |
           git diff --quiet || git commit -m "Update output folder [skip ci]"
+        # The [skip ci] tag prevents the commit from triggering another workflow run
 
+      # 10. Push changes back to the repository
       - name: Push Changes
         if: steps.commit.outputs.commit != ''
         uses: ad-m/github-push-action@v0.6.0
