@@ -1,0 +1,39 @@
+name: Compile and Push Output
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Run compile.sh
+        run: ./compile.sh
+
+      - name: Add Output Folder Changes
+        run: git add output
+
+      - name: Commit Changes
+        id: commit
+        run: |
+          git diff --quiet || git commit -m "Update output folder [skip ci]"
+
+      - name: Push Changes
+        if: steps.commit.outputs.commit != ''
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
