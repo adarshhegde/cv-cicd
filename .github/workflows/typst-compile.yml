@@ -62,3 +62,6 @@ jobs:
         run: git push origin main || echo "No changes to push."
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Copy files to Syncthing Dir
+        run: cp ./output/*.pdf /home/runner/Sync/resume
