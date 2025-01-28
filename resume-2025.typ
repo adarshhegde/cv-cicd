@@ -1,5 +1,6 @@
 #import "templates/resume.template.typ": *
-#import "@preview/fontawesome:0.4.0": *
+#import "lib.typ": *
+
 
 #show: resume.with(
   author: "Adarsh Hegde",
