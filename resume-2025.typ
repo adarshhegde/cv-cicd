@@ -37,26 +37,7 @@
     - *#underline[External Gateways]*: Built *JSON-based API gateways* for internal *gRPC* service consumption.
   ]
 )
-= Education
-#edu(
-  institution: "New Horizon College of Engineering",
-  date: "Aug 2023",
-  location: "Bengaluru, KA",
-  degrees: (
-    ("MCA", "Master of Computer Applications"),
-  ),
-  gpa: "8.42 / 9.0"
-)
 
-#edu(
-  institution: "Bhandarkars' Arts & Science College, Kundapura",
-  date: "Sept 2021",
-  location: "Udupi, KA",
-  gpa: "7.6 / 9.0",
-  degrees: (
-    ("BCA", "Bachelor of Computer Applications"),
-  ),
-)
 = Skills
 #skills((
   ("Languages", (
@@ -93,6 +74,27 @@
     "AWS",
   )),
 ))
+
+= Education
+#edu(
+  institution: "New Horizon College of Engineering",
+  date: "Aug 2023",
+  location: "Bengaluru, KA",
+  degrees: (
+    ("MCA", "Master of Computer Applications"),
+  ),
+  gpa: "8.42 / 9.0"
+)
+
+#edu(
+  institution: "Bhandarkars' Arts & Science College, Kundapura",
+  date: "Sept 2021",
+  location: "Udupi, KA",
+  gpa: "7.6 / 9.0",
+  degrees: (
+    ("BCA", "Bachelor of Computer Applications"),
+  ),
+)
 
 = Projects
 #exp(
