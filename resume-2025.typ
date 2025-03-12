@@ -19,6 +19,7 @@
   project: "Saltside Technologies India Pvt Ltd",
   achievements: [
     *Recognitions*
+    - Star of the Quarter Award, Q4 2024
     - Star of the Quarter Award, Q2 2024
   ],
   summary: [
