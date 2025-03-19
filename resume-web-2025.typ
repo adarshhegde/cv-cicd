@@ -29,7 +29,7 @@
   location: "Remote, Bengaluru",
   details: [
     - *#underline[Microservices Development]*: Built and maintained *RESTful APIs* and *gRPC & Protobuf*-based microservices using *Go*, ensuring scalability and high performance.
-    - *underline[Web]*: Migrated modules from legacy Web Stack to ReactJS based PWA+SSR Hybrid codebase, optimised NodeJS based proxy server interacting with backend services.
+    - *#underline[Web]*: Migrated modules from legacy Web Stack to ReactJS based PWA+SSR Hybrid codebase, optimised NodeJS based proxy server interacting with backend services.
     - *#underline[Email Service]*: Spearheaded a *Golang*-based email service featuring load balancing (SES/SendGrid), *Apache Kafka* for distributed event ingestion, and *SNS/SQS* with exponential backoff for retries. Integrated an HTML templating engine. Achieved \$900/month cost savings by optimizing SendGrid usage.
     - *#underline[Scheduler Optimization]*: Implemented a backoff strategy for a *Golang & MongoDB*-based scheduler, reducing job failures during peak loads.
     - *#underline[RPC Migration]*: Transitioned from *Apache Thrift* to *gRPC & Protobufs*, cutting service timeouts by *99%*, lowering memory usage, and improving latency.
