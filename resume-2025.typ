@@ -7,25 +7,33 @@
   location: "Bengaluru, KA",
   contacts: (
     [#link("mailto:adhegde001@gmail.com")[Email]],
-    [#link("https://adarshhegde.com")[Website]],
     [#link("https://github.com/adarshhegde")[GitHub]],
+    [#link("https://adarshhegde.com?ref=resume")[Blog]],
     [#link("https://linkedin.com/in/adhegde004")[LinkedIn]],
   ),
 )
 
+= Professional summary
+#pad(
+  bottom:2pt,
+  [
+      Results-driven software engineer with 1.5+ years of experience developing *scalable microservices and backend systems*. Expertise in *Go, gRPC, and cloud*, with a track record of optimizing performance, reducing costs, and implementing innovative solutions.
+  ]
+)  
+
+
+
 = Experience
 #exp(
-  role: "Associate Software Engineer",
-  project: "Saltside Technologies India Pvt Ltd",
+  role: "Saltside Technologies India Pvt Ltd",
   achievements: [
     *Recognitions*
-    - Star of the Quarter Award, Q4 2024
-    - Star of the Quarter Award, Q2 2024
+    - Star of the Quarter Award - *Q4 2024*, *Q2 2024*
   ],
   summary: [
-    *Core Contributions*
+    *Associate Software Engineer*
   ],
-  date: "April 2023 - Present",
+  date: "Sept 2023 - Present",
   location: "Remote, Bengaluru",
   details: [
     - *#underline[Microservices Development]*: Built and maintained *RESTful APIs* and *gRPC & Protobuf*-based microservices using *Go*, ensuring scalability and high performance.
@@ -36,6 +44,15 @@
     - *#underline[Docker Optimization]*: Improved 20+ service Dockerfiles with multi-stage builds and caching, accelerating test environments and container deployments.
     - *#underline[Performance Optimization]*: Diagnosed and resolved *n+1 query* issues in *Ruby* services, significantly improving response times.
     - *#underline[External Gateways]*: Built *JSON-based API gateways* for internal *gRPC* service consumption.
+  ]
+)
+#exp(
+  role: "Software Engineer Intern",
+  date: "April 2023 - Aug 2023",
+  details: [
+    - *#underline[Web Engineering]*: Contributed to migration of legacy web services to *ReactJS*-based custom SSR + CSR framework, enhancing frontend performance and user experience.
+    - *#underline[Backend Development]*: Acquired proficiency in *Golang* and company's technical stack, contributing to both *Golang* and *Ruby* codebases.
+
   ]
 )
 
@@ -103,24 +120,3 @@
   date: "March 2023",
   summary: "Created a web application using SolidJS to visualize graph algorithms such as DFS and BFS.",
 )
-
-= Interests
-#exp(
-  role: "Blogging",
-  details: [
-    - #link("https://adarshhegde.com/blog/my-homelab-setup", [
-        My Homelab Setup - Home Automation & Self-Hosting
-      ])
-  ]
-)
-
-
-// Uncomment if you want to add more interests:
-// #exp(
-//   role: "Self Hosting & Home Automation - Homelab",
-//   details: [
-//     - Fully local home automation using #link("https://www.home-assistant.io/", "Home Assistant")
-//     - Self-hosting local services (Jellyfin, Immich, AdGuard, Syncthing) on Proxmox VE with automated backups
-//     - Tailscale overlay VPN for secure remote access
-//   ]
-// )
