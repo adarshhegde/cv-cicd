@@ -164,7 +164,10 @@ Experience section formatting logic.
         }
         #{
           if summary != "" [
-            \ #summary
+              #pad(top: -4pt, 
+        bottom: 0pt,
+        left:1pt,
+       summary)
           ]
         }
       ],
@@ -178,12 +181,16 @@ Experience section formatting logic.
       ]
     )
   )
-  details
+  [
+    #pad(
+      top: -4pt,
+      details)
+  ]
   [
     #{
       if achievements != [] {
-        pad(top: -5pt, 
-        bottom: 1pt,
+        pad(top: -1pt, 
+        bottom: 0pt,
         left:1pt,
       achievements)
       }
