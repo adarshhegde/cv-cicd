@@ -7,7 +7,7 @@
   location: "Bengaluru, KA",
   contacts: (
     [#link("mailto:adhegde001@gmail.com")[Email]],
-    [#link("https://github.com/adarshhegde")[GitHub]],
+   # [#link("https://github.com/adarshhegde")[GitHub]],
     [#link("https://adarshhegde.com?ref=resume")[Blog]],
     [#link("https://linkedin.com/in/adhegde004")[LinkedIn]],
   ),
@@ -113,10 +113,11 @@
     ("BCA", "Bachelor of Computer Applications"),
   ),
 )
-
+/*
 = Projects
 #exp(
   role: link("https://adarshhegde.github.io/solid-graph-visualiser/")[Graph Algorithms Visualizer, #fa-icon("external-link", solid: false)],
   date: "March 2023",
   summary: "Created a web application using SolidJS to visualize graph algorithms such as DFS and BFS.",
 )
+*/
