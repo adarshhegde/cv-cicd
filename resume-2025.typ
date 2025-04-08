@@ -7,7 +7,7 @@
   location: "Bengaluru, KA",
   contacts: (
     [#link("mailto:adhegde001@gmail.com")[Email]],
-   # [#link("https://github.com/adarshhegde")[GitHub]],
+   // [#link("https://github.com/adarshhegde")[GitHub]],
     [#link("https://adarshhegde.com?ref=resume")[Blog]],
     [#link("https://linkedin.com/in/adhegde004")[LinkedIn]],
   ),
