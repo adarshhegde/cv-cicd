@@ -101,7 +101,7 @@
   degrees: (
     ("MCA", "Master of Computer Applications"),
   ),
-  gpa: "8.42 / 9.0"
+  gpa: "8.52 / 9.0"
 )
 
 #edu(
