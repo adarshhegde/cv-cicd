@@ -28,12 +28,13 @@ and creates the header and footer for the resume.
   set text(
     font: "New Computer Modern",
     size: 11pt,
-    lang: "en"
+    lang: "en",
+    hyphenate: false
   )
 
   set page(
     margin: (
-      top: 1cm,
+      top: 1.2cm,
       bottom: 0cm,
       left: 1.5cm,
       right: 1.5cm
@@ -59,7 +60,7 @@ and creates the header and footer for the resume.
   pad(
     top: 0.25em,
     align(center)[
-      #smallcaps[#contacts.join("  |  ")]
+      #contacts.join("  |  ")
     ],
   )
 
