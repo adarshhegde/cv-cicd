@@ -1,5 +1,5 @@
 #import "templates/resume.template.typ": *
-#import "libs/lib.typ": *
+#import "@preview/fontawesome:0.4.0": *
 
 
 
